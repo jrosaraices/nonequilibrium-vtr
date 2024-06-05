@@ -6,4 +6,4 @@ The folder `fig1` (resp. `fig2`) contains the python script `plot_fig1_panel.py`
 - a `dict` with the plotted data in a `numpy.NDArray`, whether it be an *xy* dataset for the curves in Fig. 1 or basis function amplitudes for the heatmaps in Fig. 2; and
 - a `dict` of plotting arguments passed to `matplotlib.axes.Axes.plot` to plot each curve in the panel.
 
-Panels generated with these scripts were separately saved and manually arranged in a vector graphics editor to generate Figs. 1-2.
+Panels generated with these scripts were separately stored and manually arranged in a vector graphics editor to form Figs. 1-2.
