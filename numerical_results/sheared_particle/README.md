@@ -1,4 +1,4 @@
-Enclosed are the numerical results for the sheared particle in a confining potential, presented in Figs. 1-2 of [the article on arXiv](http://arxiv.org/abs/2406.01582).
+Enclosed are the numerical results for the sheared particle in a confining potential, together with plotting scripts to generate Figs. 1-2 of [the article on arXiv](http://arxiv.org/abs/2406.01582).
 
 The folder `fig1` (resp. `fig2`) contains the python script `plot_fig1_panel.py` (resp. `plot_fig2_panel.py`) used to generate each panel in Fig. 1 (resp. Fig. 2).  Raw numerical data plotted with these scripts are included separately for each panel as python `pickle`s (e.g., `fig1a_data.pickle`).  Each data pickle contains a `dict` comprised of:
 
