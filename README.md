@@ -1,6 +1,6 @@
 # Data supplement: _Variational time reversal for free energy estimation in nonequilibrium steady states_
 
-> __NOTE__: This repository is still under construction, expected to be complete by _Wednesday, Jun 6 at 9PM PST_.
+> __NOTE__: This repository is still under construction, expected to be complete by _Wednesday, Jun 5 at 9PM PST_.
 
 This repository contains the numerical results, with generating code, presented in the journal article titled ___Variational time reversal for free energy estimation in nonequilibrium steady states___, authored by [Jorge L. Rosa-Raíces](mailto:jrosaraices@berkeley.edu) and [David T. Limmer](mailto:dlimmer@berkeley.edu) at UC Berkeley and submitted for publication in Physical Review E.  The article is currently available [on arXiv](https://arxiv.org/abs/2406.01582).  This repository is organized as follows:
 
