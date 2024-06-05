@@ -4,4 +4,4 @@ The folder `fig3` contains the python scripts `plot_fig3_averages.py`, which gen
 
 Similarly, the folder `fig4` contains `plot_fig4_averages.py`, which plots optimized policy parameters stored in pickles `fig4b_data.pickle` and `fig4c_data.pickle` for the swimming 10-mer and 20-mer, respectively.
 
-Panels generated with these scripts were separately saved and manually arranged in a vector graphics editor to generate Figs. 3-4.
+Panels generated with these scripts were separately stored and manually arranged in a vector graphics editor to form Figs. 3-4.
