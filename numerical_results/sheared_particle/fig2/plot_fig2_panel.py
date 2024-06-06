@@ -70,15 +70,15 @@ def squareexp_xy(nx, ny, sigma, x, y):
     if (x.ndim != 1) or (y.ndim != 1):
         raise ValueError(u'Input ``x`` and ``y`` must be 1d arrays')
 
-    if (scale <= 0.0):
-        raise ValueError(u'Input ``scale`` must be positive scalar')
+    if (sigma <= 0.0):
+        raise ValueError(u'Input ``sigma`` must be positive scalar')
 
     X, Y = np.meshgrid(x, y)
 
-    σx = scale / nx
+    σx = sigma / nx
     μx = σx * (np.arange(nx, dtype=np.float64) - (nx - 1) * 0.5)
 
-    σy = scale / ny
+    σy = sigma / ny
     μy = σy * (np.arange(ny, dtype=np.float64) - (ny - 1) * 0.5)
 
     U, V = np.meshgrid(μx, μy)
@@ -102,7 +102,7 @@ def eval_doob(x, y, theta, sigma, grad=False):
         raise ValueError(u'Input ``theta`` must be a 2d array')
 
     (nx, ny,) = theta.shape
-    (dfxydx, dfxydy, fxy,) = squareexp_xy(nx, ny, scale, x, y)
+    (dfxydx, dfxydy, fxy,) = squareexp_xy(nx, ny, sigma, x, y)
 
     def contract_basis(xy_basis):
         return np.sum(theta[:, :, None, None] * xy_basis, axis=(0, 1,))
@@ -162,7 +162,7 @@ if __name__ == '__main__':
 
     # control policy ansatz hyper-parameters
     nx, ny, = data_dict['basis_shape']  # number of basis function along x and y axes
-    scale, = data_dict['basis_scale']   # scale parameter for all basis functions
+    sigma = data_dict['basis_scale']   # scale parameter for all basis functions
 
     # control policy parameter vector (amplitude coefficients for basis functions)
     theta, = data_dict['theta']
@@ -207,9 +207,9 @@ if __name__ == '__main__':
         (np.arange(grid_size) - (grid_size - 1) * 0.5) / grid_size
 
     if args.plot_neqpes:
-        heatmap = eval_neqpes(x, y, theta, scale)[-1]
+        heatmap = eval_neqpes(x, y, theta, sigma)[-1]
     else:
-        heatmap = eval_doob(x, y, theta, scale)[-1]
+        heatmap = eval_doob(x, y, theta, sigma)[-1]
 
     im = ax.imshow(heatmap - heatmap.min(), extent=2 * grid_lims,
                    interpolation='none', origin='lower', aspect='equal',
