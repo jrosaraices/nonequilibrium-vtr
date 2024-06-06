@@ -92,10 +92,6 @@ def ax_plot_linefill(ax, x, y, yerror, yshift=0.0, alpha=1.0, **plot_kwargs):
     return (line, fill,)
 
 
-hist_data_dirname = '/Users/jrosa/Dropbox/Remote_Code/filament_build/with_mpi/varying_dims/new_loss/deterministic_active_force/dvr_solver_sparse_output/ShearedDoubleWell2D/'
-data_1d_dirname = '/Volumes/Scratch2/deterministic_active_force/cleaner_code/one-dimensional_basis/gaussian/zero_initialization/relax/'
-data_2d_dirname = '/Volumes/Scratch2/deterministic_active_force/cleaner_code/two-dimensional_basis/gaussian/zero_initialization/relax/'
-
 # simple argument parser
 parser = ArgumentParser()
 parser.add_argument('pickle', type=str,)
@@ -149,11 +145,11 @@ if __name__ == '__main__':
     ax.set_title(data_dict['panel_title'], loc='center', pad=3.0, fontsize=axislabel_fontsize)
 
     # plot numerically exact FES estimates
-    feq_ref_line = ax_plot_line(
+    ax_plot_line(
         ax, feq_ref['x'], feq_ref['y'], yshift=feq_ref['y'].min(),
         color=feq_ref_color, label=feq_ref_label, **plot_kwargs
     )
-    fneq_ref_line = ax_plot_line(
+    ax_plot_line(
         ax, fneq_ref['x'], fneq_ref['y'], yshift=fneq_ref['y'].min(), ms=plot_markersize,
         color=fneq_ref_color, label=fneq_ref_label, **plot_kwargs
     )
