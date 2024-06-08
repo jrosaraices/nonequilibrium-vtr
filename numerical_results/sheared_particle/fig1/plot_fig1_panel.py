@@ -84,8 +84,8 @@ def ax_plot_linefill(ax, x, y, yerror, yshift=0.0, alpha=1.0, **plot_kwargs):
     line = ax_plot_line(ax, x, y, yshift=yshift, **plot_kwargs)
 
     fill = ax.fill_between(line.get_xdata(),
-                           line.get_ydata() - yshift - yerror,
-                           line.get_ydata() - yshift + yerror,
+                           line.get_ydata() - yerror,
+                           line.get_ydata() + yerror,
                            facecolor=line.get_color(), edgecolor=line.get_color(),
                            linewidth=0.25 * line.get_linewidth(), alpha=alpha,
                            zorder=line.get_zorder()-0.5,)
