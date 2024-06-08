@@ -138,25 +138,27 @@ if __name__ == '__main__':
                         right=right_adjust,
                         bottom=bottom_adjust,)
 
-    # set axis limits, axis (tick)labels, and figure title
+    # set axis limits and figure title
     ax.set_xlim(data_dict['panel_xlim'])
     ax.set_ylim(data_dict['panel_ylim'])
-    ax.set_yticks([0.0, 3.0, 6.0])
 
     ax.set_xlabel(r'$r$', fontsize=axislabel_fontsize, labelpad=0.0)
     ax.set_ylabel(r'$F(r)$', fontsize=axislabel_fontsize, labelpad=4.0)
     ax.set_title(data_dict['panel_title'], loc='center', pad=3.0, fontsize=axislabel_fontsize)
 
-    ax.text(1.1, 0.5, r'$\mathrm{{Pe}} = {:s}$'.format(args.peclet),
-            fontsize=axislabel_fontsize, ha='left', va='center',
-            transform=ax.transAxes, rotation=90)
-
-    ax.set_xticks(np.linspace(*list(ax.get_xlim()),
-                              num=3, endpoint=True).tolist())
-    ax.set_yticks([0.0, 3.0, 6.0])
+    # set axis ticklabels
+    xticks = np.linspace(*tuple(ax.get_xlim()), num=3, endpoint=True).tolist()
+    ax.set_xticks(xticks)
+    yticks = [0.0, 3.0, 6.0]
+    ax.set_yticks(yticks)
 
     ax.xaxis.set_tick_params(labelsize=ticklabel_fontsize)
     ax.yaxis.set_tick_params(labelsize=ticklabel_fontsize)
+
+    # set figure label (appears to the right of the plot area)
+    ax.text(1.1, 0.5, r'$\mathrm{{Pe}} = {:s}$'.format(args.peclet),
+            fontsize=axislabel_fontsize, ha='left', va='center',
+            transform=ax.transAxes, rotation=90)
 
     ax.axhline(y=0.0, c='k', lw=0.5, zorder=-10)
 
